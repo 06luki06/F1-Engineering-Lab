@@ -31,7 +31,7 @@ class MercedesEngine(Engine):
         return "Mercedes engine stopped."
     
     def get_spec(self) -> str:
-        return "Mercedes Engine: 4.0L V8, 603 HP"
+        return "Mercedes Engine: 4.0L V6, 603 HP"
     
 class EngineFactory:
     _engines = {

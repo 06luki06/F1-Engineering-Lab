@@ -15,8 +15,10 @@ def test_interface_enforcement():
     with pytest.raises(TypeError):
         _ = Engine() 
     
-    # 3. Check if 'start' is marked as abstract
+    # 3. Check if abstract methods are marked as abstract
     assert getattr(Engine.start, '__isabstractmethod__', False), "The 'start' method must be decorated with @abstractmethod!"
+    assert getattr(Engine.stop, '__isabstractmethod__', False), "The 'stop' method must be decorated with @abstractmethod!"
+    assert getattr(Engine.get_spec, '__isabstractmethod__', False), "The 'get_spec' method must be decorated with @abstractmethod!"
 
 def test_factory_creates_ferrari():
     """
@@ -61,3 +63,18 @@ def test_unknown_manufacturer_raises_error():
         factory.get_engine("Trabi")
     
     assert "Unknown manufacturer" in str(excinfo.value)
+
+def test_engine_stop_method():
+    """
+    TEST 5: Stop Method Coverage
+    Ensures that the 'stop' method is implemented and returns a sensible value
+    for all concrete engine classes created by the factory.
+    """
+    factory = EngineFactory()
+    ferrari = factory.get_engine("Ferrari")
+    mercedes = factory.get_engine("Mercedes")
+    ferrari_stop_result = ferrari.stop()
+    mercedes_stop_result = mercedes.stop()
+    # Ensure that calling stop() does not raise and returns a string (or at least a truthy value)
+    assert isinstance(ferrari_stop_result, str)
+    assert isinstance(mercedes_stop_result, str)
