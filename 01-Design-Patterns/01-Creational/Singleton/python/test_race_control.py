@@ -45,9 +45,11 @@ def test_thread_safety():
     Simulate multiple sensors trying to access/create RaceControl simultaneously.
     """
     instances = []
+    instances_lock = threading.Lock()
 
     def get_instance_worker():
-        instances.append(RaceControl.get_instance())
+        with instances_lock:
+            instances.append(RaceControl.get_instance())
 
     # Create 50 threads trying to grab the RaceControl at the same time
     threads = [threading.Thread(target=get_instance_worker) for _ in range(50)]

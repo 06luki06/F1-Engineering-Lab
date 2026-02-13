@@ -1,7 +1,4 @@
 {
-    // Python Configuration
-    "python.defaultInterpreterPath": "${workspaceFolder}/Scripts/python.exe",
-    
     // Testing Configuration
     "python.testing.pytestArgs": [
         "01-Design-Patterns"
@@ -20,5 +17,8 @@
         "coverage.xml"
     ],
     "coverage-gutters.showLineCoverage": true,
-    "coverage-gutters.showRulerCoverage": true
+    "coverage-gutters.showRulerCoverage": true,
+    "python.analysis.extraPaths": [
+        "./01-Design-Patterns/01-Creational/Singleton/python"
+    ]
 }

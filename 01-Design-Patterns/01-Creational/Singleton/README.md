@@ -24,7 +24,7 @@ The singleton class must manage the following:
 * **Attribute `RaceStatus`**: A variable storing the current track condition.
   * *Allowed values:* `GREEN`, `YELLOW`, `RED`, `SAFETY_CAR`.
   * *Default:* `GREEN`.
-* **Method `UpdateStatus(value)`**: Updates the `RaceStatus` and logs the change.
+* **Method `UpdateStatus(value)`**: Updates the `RaceStatus`.
 * **Method `GetStatus()`**: Returns the current `RaceStatus`.
 
 ### 3. Concurrency
@@ -59,7 +59,7 @@ classDiagram
         +update_status(status: String)
         +get_status() String
     }
-    note for RaceControl "Constructor is private to </br>prevent external instantiation."
+    note for RaceControl "Constructor is controlled so that</br>all calls return the same instance."
 ```
 
 ### Sequence Diagram
