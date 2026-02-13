@@ -96,5 +96,5 @@ sequenceDiagram
     Factory-->>Team: return Engine Object
 
     Team->>E: start()
-    E-->>Team: "Bwoah! It's running."
+    E-->>Team: "Bwoah! V6 sounds"
 ```

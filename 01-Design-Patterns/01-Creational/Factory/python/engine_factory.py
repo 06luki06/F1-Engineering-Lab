@@ -39,8 +39,8 @@ class EngineFactory:
         "Mercedes": MercedesEngine
     }
 
-    def get_engine(self, type: str) -> Engine:
-        engine_cls = self._engines.get(type)
+    def get_engine(self, manufacturer: str) -> Engine:
+        engine_cls = self._engines.get(manufacturer)
         if not engine_cls:
-            raise ValueError(f"Unknown manufacturer: {type}")
+            raise ValueError(f"Unknown manufacturer: {manufacturer}")
         return engine_cls()
