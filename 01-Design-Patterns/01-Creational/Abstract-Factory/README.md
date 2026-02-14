@@ -93,8 +93,8 @@ classDiagram
     %% Dependency Lines
     FerrariFactory ..> FerrariICE : creates
     FerrariFactory ..> FerrariERS : creates
-    MercedesFactory ..> MercedesICE :create
-    MercedesFactory ..> MercedesERS : create
+    MercedesFactory ..> MercedesICE : creates
+    MercedesFactory ..> MercedesERS : creates
 ```
 
 ### Sequence Diagram
