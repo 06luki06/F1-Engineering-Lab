@@ -33,16 +33,6 @@ The singleton class must manage the following:
 
 ---
 
-## 🧪 Verification Steps (Language Independent)
-
-To confirm the implementation is correct, the test code in each language must:
-
-1. **Uniqueness Test**: Attempt to create/request two instances (e.g., `ctrl1` and `ctrl2`).
-2. **Identity Check**: Verify that both instances point to the same object in memory (Identity equality).
-3. **State Consistency**: Change the status to `RED` via `ctrl1` and verify that `ctrl2.GetStatus()` also returns `RED`.
-
----
-
 ## 📊 Diagrams
 
 ### Class Diagram
