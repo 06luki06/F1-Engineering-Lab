@@ -64,6 +64,7 @@ classDiagram
 
     class CarSetup {
         +front_wing_angle: int
+        +tyre_pressure_psi: float
         +engine: EngineConfiguration
         +clone() CarSetup
     }
