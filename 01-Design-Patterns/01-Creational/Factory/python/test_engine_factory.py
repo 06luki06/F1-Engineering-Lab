@@ -40,6 +40,7 @@ def test_factory_creates_mercedes():
     engine = factory.get_engine("Mercedes")
     
     assert isinstance(engine, MercedesEngine)
+    assert isinstance(engine, Engine)
 
 def test_engine_behavior():
     """

@@ -36,7 +36,7 @@ Implement at least two distinct engine types that inherit from the base `Engine`
 
 Implement a mechanism to generate these engines based on a parameter.
 
-* **Method:** `get_engine(manufacturer_name)`
+* **Method:** `get_engine(manufacturer)`
 * **Logic:**
   * Input "Ferrari" -> Returns instance of `FerrariEngine`.
   * Input "Mercedes" -> Returns instance of `MercedesEngine`.
@@ -74,7 +74,7 @@ classDiagram
 
     %% Factory
     class EngineFactory {
-        +get_engine(type: str) Engine
+        +get_engine(manufacturer: str) Engine
     }
     
     EngineFactory ..> Engine : creates
